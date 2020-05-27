@@ -1,0 +1,4 @@
+<section class="lobby">
+    <app-nav-bar [menuItems]="menuItems"></app-nav-bar>
+    <app-game-collection *ngIf="gameCollection$ | async" [gameCollection]="gameCollection$ | async"></app-game-collection>
+</section>

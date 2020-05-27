@@ -1,0 +1,5 @@
+<section class="game-collection">
+    <div *ngFor="let game of gameCollection; trackBy: trackByGameId" class="game-collection-wrapper">
+        <app-game-thumbnail [game]="game"></app-game-thumbnail>
+    </div>
+</section>

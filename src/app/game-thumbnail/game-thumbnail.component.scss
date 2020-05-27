@@ -1,0 +1,120 @@
+@import 'media-queries';
+
+.game-thumbnail {
+    &-wrapper {
+        display: block;
+        position: relative;
+        cursor: pointer;
+
+        img {
+            display: block;
+            width: 100%;
+            height: 85%;
+            object-fit: contain;
+            border-radius: 20px;
+        }
+
+        &-hover-container {
+            height: 100%;
+            width: 100%;
+            transition: opacity 0.1s ease-in;
+            position: absolute;
+            z-index: 2;
+            opacity: 0;
+            background-color: rgba(0,0,0,0.6);
+            border-radius: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+
+            .play-btn {
+                // To change the PNG to white
+                filter: invert(100%) sepia(0%) saturate(1%) hue-rotate(61deg) brightness(101%) contrast(102%);
+            }
+
+            .game-name {
+                color: #fff;
+            }
+        }
+
+        &:hover {
+            .game-thumbnail-wrapper-hover-container {
+                opacity: 1;
+            }
+        }
+
+        &-jackpot-stripe {
+            position: absolute;
+            left: 0;
+            right: 0;
+            top: 0;
+            text-align: center;
+        }
+
+        &-ribbon {
+            width: 150px;
+            height: 150px;
+            overflow: hidden;
+            position: absolute;
+            z-index: 4;
+            top: -10px;
+            right: -10px;
+
+            @include tablet {
+                width: 120px;
+                height: 120px;
+            }
+
+            &:before,
+            &:after {
+                content: '';
+                display: block;
+                position: absolute;
+                z-index: -1;
+                border: 6px solid #8DC63F;
+            }
+
+            &:before {
+                top: -2px;
+                right: 102px;
+                border-radius: 10px 0 0 0;
+
+                @include tablet {
+                    right: 67px;
+                }
+            }
+
+            &:after {
+                bottom: 35px;
+                right: -2px;
+                border-radius: 0 0 10px 0;
+
+                @include tablet {
+                    bottom: 41px;
+                }
+            }
+
+            span {
+                position: absolute;
+                display: block;
+                width: 161px;
+                padding: 8px 0;
+                background-color: #8DC63F;
+                color: #fff;
+                text-align: center;
+                left: 28px;
+                top: 30px;
+                transform: rotate(45deg);
+                font-weight: 600;
+                box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+
+                @include tablet {
+                    width: 106px;
+                    left: 38px;
+                    top: 17px;
+                    padding: 4px 0;
+                }
+            }
+        }
+    }
+}

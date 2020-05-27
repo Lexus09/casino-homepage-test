@@ -1,0 +1,29 @@
+@import 'media-queries';
+
+.navbar {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    overflow-x: auto;
+
+    &-wrapper {
+        padding: 15px;
+        color: #fff;
+        text-align: center;
+        font-size: 1.2rem;
+        background-color: #373737;
+        flex: 1 0 auto;
+
+        @include mobile {
+            font-size: 1rem;
+        }
+
+        &.active {
+            background-color: #8DC63F;
+        }
+
+        &:focus {
+            outline: none;
+        }
+    }
+}

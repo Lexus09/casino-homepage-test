@@ -1,0 +1,15 @@
+<section class="game-thumbnail">
+    <a class="game-thumbnail-wrapper">
+        <div class="game-thumbnail-wrapper-hover-container">
+            <img class="play-btn" src="../../assets/images/play-icon.png">
+            <span class="game-name"> {{ game.name | titlecase }} </span>
+        </div>
+        <img [src]="game.image">
+        <div class="game-thumbnail-wrapper-jackpot-stripe" *ngIf="jackpotAmount$ | async">
+            <app-jackpot-stripe [jackpotValue]="jackpotAmount$ | async" currencyCode="GBP"></app-jackpot-stripe>
+        </div>
+        <div class="game-thumbnail-wrapper-ribbon" *ngIf="ribbonName$ | async">
+            <span> {{ ribbonName$ | async | uppercase }} </span>
+        </div>
+    </a>
+</section>
