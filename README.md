@@ -1,4 +1,6 @@
-# Whitehatassignment
+# Casino Homepage Test
+
+Create a casino lobby using the provided API endpoints and designs. Time limit of 4 hours.
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 9.1.7.
 
